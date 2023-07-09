@@ -1,0 +1,44 @@
+<div class="container-fluid">
+    <table class="table table-bordered">
+        <thead>
+
+            <th>Author's Name</th>
+            <th>Birthday</th>
+            <th>Place Of Birth</th>
+            <th>Books List</th>
+            <th>Actions</th>
+        </thead>
+
+        <tbody>
+
+
+            <tr [contentEditable]=editable>
+                <td>{{Books?.data?.author}}</td>
+                <td>{{Books?.data?.birthday}}</td>
+                <td>{{Books?.data?.birthPlace}}</td>
+             
+                <td>
+                    <div class="container-fluid">
+                        <div class="row" *ngFor="let book of Books?.data?.books">
+                            <div class="col-md-6 col-xs-12"><img src={{book.imageUrl}} class="bookImage"><a
+                                    href="{{book.purchaseLink}}">{{book.title}}</a><span>Date Published:
+                                    {{book.PublishDate}}</span><br></div>
+                            <div class="col-md-6 col-xs-12"><img src={{book.imageUrl}} class="bookImage"><a
+                                    href="{{book.purchaseLink}}">{{book.title}}</a><span>Date Published:
+                                    {{book.PublishDate}}</span><br></div>
+                        </div>
+                    </div>
+                </td>
+                <td><button class="bt btn-default" (click)="modify($event)">Modify</button><br><br>
+                    <button class="bt btn-default">ADD</button><br><br>
+                    <button class="bt btn-default">Delete</button><br><br>
+                    <button class="bt btn-default">Sort</button></td><br>
+            </tr>
+
+
+
+
+        </tbody>
+    </table>
+
+</div>
